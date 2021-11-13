@@ -1,0 +1,26 @@
+.row {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.digit {
+    background-color:deepskyblue;
+    flex-basis: 50px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+}
+.operation {
+    background-color:burlywood;
+}
+fieldset {
+    width: 200px;
+}
+#calcScreen {
+    height: 100%;
+    width: 95%;
+    padding: 0;
+}

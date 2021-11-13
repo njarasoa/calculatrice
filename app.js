@@ -1,8 +1,21 @@
-function calculerv0(){
-    var inputValue = window.document.getElementsByTagName("input")[0].value ;
-    window.document.getElementById("resultatv0").innerHTML = eval(inputValue);
+////// librarie /////
+function somme(a, b){
+    return a + b;
 }
-////////////////Version 1////////////////////
+
+function soustraction(a, b){
+    return a - b;
+}
+
+function multiplication(a, b){
+    return a * b;
+}
+
+function division(a, b){
+    return a / b;
+}
+
+//////////////////////////////////////
 
 // variables globales
 let premier = undefined;
@@ -21,8 +34,22 @@ function allumer(){
     }
 }
 
+
 function afficher(valeur){
     window.document.getElementById("calcScreen").value = valeur;
+}
+
+function saisir(nombre){
+    if (!allume) return alert("Veuillez allumer la calculatrice");
+    if (operateur === undefined) {
+        // première saisie
+        premier = (premier === undefined) ? nombre : premier.toString() + nombre.toString();
+        afficher(premier);
+    } else {
+        // deuxième saisie
+        second = (second === undefined) ? nombre : second.toString() + nombre.toString();
+        afficher(second);
+    }
 }
 
 function choisirOperateur(operation){
@@ -31,19 +58,6 @@ function choisirOperateur(operation){
     } else {
         operateur = operation;
         afficher("saisir 2eme nombre");
-    }
-}
-
-function saisir(nombre){
-    if (!allume) return alert("Veuillez allumer la calculatrice");
-    if (nombre !== undefined && operateur === undefined) {
-        // première saisie
-        premier = (premier === undefined) ? nombre : premier.toString() + nombre.toString();
-        afficher(premier);
-    } else {
-        // deuxième saisie
-        second = (second === undefined) ? nombre : second.toString() + nombre.toString();
-        afficher(second);
     }
 }
 
@@ -74,21 +88,4 @@ function reinitiliser(){
     premier = undefined;
     second = undefined;
     operateur = undefined;
-}
-
-////// librarie /////
-function somme(a, b){
-    return a + b;
-}
-
-function soustraction(a, b){
-    return a - b;
-}
-
-function multiplication(a, b){
-    return a * b;
-}
-
-function division(a, b){
-    return a / b;
 }

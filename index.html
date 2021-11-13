@@ -9,11 +9,40 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <h2>Calculatrice v0</h2>
-    <input type="text" name="" id=""><button onclick="calculerv0()">Calculer</button>
-    <div>
-        Résultat = <span id="resultatv0"></span>
-    </div>
-
+    <fieldset>
+        <legend>Calculatrice v1</legend>
+        <div class="row">
+            <div class="divInput">
+                <input type="text" dir="rtl" id="calcScreen">
+            </div>
+            <div class="operation digit" onclick="allumer()">AC</div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="digit" onclick="saisir(7)">7</div>
+                <div class="digit" onclick="saisir(8)">8</div>
+                <div class="digit" onclick="saisir(9)">9</div>
+                <div class="operation digit" onclick="choisirOperateur('/')">/</div>
+            </div>     
+            <div class="row">
+                <div class="digit" onclick="saisir(4)">4</div>
+                <div class="digit" onclick="saisir(5)">5</div>
+                <div class="digit" onclick="saisir(6)">6</div>
+                <div class="operation digit" onclick="choisirOperateur('*')">*</div>
+            </div>
+            <div class="row">
+                <div class="digit" onclick="saisir(1)">1</div>
+                <div class="digit" onclick="saisir(2)">2</div>
+                <div class="digit" onclick="saisir(3)">3</div>
+                <div class="operation digit" onclick="choisirOperateur('-')">-</div>
+            </div>
+            <div class="row">
+                <div class="digit" onclick="saisir(0)">0</div>
+                <div class="digit">.</div>
+                <div class="operation digit" onclick="calculer()">=</div>
+                <div class="operation digit" onclick="choisirOperateur('+')">+</div>
+            </div>             
+        </div>
+    </fieldset>
 </body>
 </html>
